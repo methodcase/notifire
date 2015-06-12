@@ -74,4 +74,9 @@ module.exports = function(app, passport){
 		res.redirect('http://localhost:3100/#/home');
 	});
 	
+	app.get("/rest/view/article/:id", function(req, res){
+	  var title = req.params.id
+	  var article = require('./article.api.js')
+	  article.view(res, title)
+	});
 };
