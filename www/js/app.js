@@ -82,9 +82,6 @@ angular.module('myApp', ['ui.router','app.controllers','app.service'])
         views: {
             "head": {templateUrl: "www/templates/header.html", controller: "HomeCtrl"},
             "body": {templateUrl: "www/templates/add.html", controller: 'AddCtrl'}
-        },
-        resolve: {
-          loggedin: checkLoggedin
         }
       })
       
