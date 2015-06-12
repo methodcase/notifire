@@ -65,5 +65,12 @@ module.exports = function(app, passport){
 	  article.show(res);		
 	});
 
+	app.post('/rest/add/article', function (req, res){
+		var http = require('http');
+		var post = req.body;
+		var Firebase = require('firebase');
+		var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
+		myRootRef.push(post)
+	});
 	
 };
