@@ -163,3 +163,8 @@ body{
 .fb-comments {
     background: #fff;
 }
+
+#twitter-widget-0 {
+ float: none;
+ width: 100% !important; 
+}
