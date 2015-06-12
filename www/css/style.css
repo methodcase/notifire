@@ -1,1 +1,161 @@
-style.css
+body{
+	background: #182848;
+    font-family: Lato,appleLogo,sans-serif;
+}
+
+.intro-section {	
+	margin-top: -20px;
+    height: 100%;    
+    text-align: center;        
+    color: #CDBFE3;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);    
+    position: relative;
+    background-image: linear-gradient(to bottom, #182848 0px, #000 100%);
+}
+.intro-section:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    background-image: url('../images/rainbow.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.intro-section div {
+    z-index: 2;
+}
+
+#cal-home{
+	min-height: 840px;
+}
+
+.list-group-item{
+    font-size: 1.5em;
+}
+
+.calendar-section {    
+    margin-top: -20px;
+    height: 100%;    
+    text-align: center;        
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);    
+    position: relative;
+    background-image: linear-gradient(to bottom, #3d72b4 0px, #525252 100%);
+}
+
+.modal {
+}
+
+.modal:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";  
+  height:100px;
+}
+
+@font-face {
+    src: url('../fonts/glyphicons-halflings-regular.ttf');
+}
+
+.intro-section {	
+	margin-top: -20px;
+    height: 100%;    
+    text-align: center;        
+    color: #CDBFE3;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);    
+    position: relative;
+    background-image: linear-gradient(to bottom, #555 0px, #000 100%);
+}
+
+.intro-section:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    background-image: url('../images/summer.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.intro-section div {
+    z-index: 2;
+}
+
+#cal-home{
+	min-height: 840px;
+}
+
+.jumbotron{
+    background: transparent;
+    color: #fff;
+}
+.jumbotron h1{
+    font-size: 7em;
+    font-family: "Montserrat",sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: -3px;
+}
+.jumbotron h3{
+    font-size: 3em;
+    font-family: "Montserrat",sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    color: #fff;    
+    letter-spacing: -1px;
+}
+
+.list-group-item{
+    font-size: 1.5em;
+}
+
+#map-canvas { width: 840px; height: 180px; }
+.controls {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 767px) {
+
+   .jumbotron h1{
+      font-size: 5em;
+   }
+
+   h2 {
+      font-size: 2em;
+   }
+
+   #map-canvas { width: 700px; height: 190px;}
+}
+
+.content-section{
+    color: #fff;
+}

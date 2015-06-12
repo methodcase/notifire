@@ -1,0 +1,21 @@
+<section class="content-section">
+  <div class="container" style="margin-top:60px">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="row">
+    	<div class="col-sm-10">
+    		<div class="alert alert-danger" role="alert"><i class="fa fa-fire"/> Fire notice repoted at <i class="fa fa-spinner fa-spin" ng-hide="article"/> <strong>{{article.location}}</strong></div>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-10">
+    		<div id="map-canvas" style="width:940px"></div>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-10">
+    		<br/>
+    		<span class="pull-left">Reported by: <a href="http://www.facebook.com/{{article.fbid}}" target="_blank"> <img src="http://graph.facebook.com/{{article.fbid}}/picture?type=small"/> <i class="fa fa-facebook-square"/> {{article.name}} </a> </span>
+    	</div>
+    </div>
+  </div> <!-- /container -->
+ </section>
