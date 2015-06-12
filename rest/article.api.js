@@ -52,6 +52,19 @@ var addArticle = function(response, post, fbgraph){
   myRootRef.push(post)
 }
 
+var viewArticle = function(response, id){
+	var Firebase = require('firebase');
+	var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
+	myRootRef.orderByKey().equalTo(id).on("value", function(snapshot) {
+		var result = snapshot.val()
+
+		for (x in result){
+			response.send(result[x])
+		}
+	});
+	
+}
+
 exports.show = function(response){
 	getArticle(response)
 }
