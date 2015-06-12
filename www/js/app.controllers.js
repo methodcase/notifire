@@ -43,12 +43,6 @@ angular.module('app.controllers',['ngMap'])
           center: myLatlng,
           zoom: 15
         });
-
-      var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'lorem ipsum dolor sit amet consecteture, adispicing elit'
-      });
     }	  
 
     function setLocation(details) {
