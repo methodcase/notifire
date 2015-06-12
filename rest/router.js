@@ -70,7 +70,8 @@ module.exports = function(app, passport){
 		var post = req.body;
 		var Firebase = require('firebase');
 		var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
-		myRootRef.push(post)
+		myRootRef.push(post);
+		res.redirect('http://localhost:3100/#/home');
 	});
 	
 };

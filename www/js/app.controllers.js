@@ -117,6 +117,11 @@ angular.module('app.controllers',['ngMap'])
 		  
 })
 
+.controller('CommentCtrl', function($scope, $http){
+  
+    
+})
+
 .directive('mapa', function(){	
 
 	  
