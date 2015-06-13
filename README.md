@@ -3,7 +3,9 @@
 
 A crowdsourcing app, where people can get notified of the location of an exisitng fire incident.
 When you hear the fire truck siren what do you think of?
- - There's a fire
+
+    There's a fire
+
 and when... there's a fire we get curious! where's it at.
 we go to facebook, ask around, maybe make some calls.
 
