@@ -11,7 +11,7 @@ module.exports = function(app, passport){
 		'atoken': '',
 		'scope':'email, user_about_me, user_birthday, user_location, manage_pages, user_groups'
 	}
-	
+
 	passport.use(new FacebookStrategy({
 		clientID: conf.client_id,
 		clientSecret: conf.client_secret,
@@ -100,6 +100,25 @@ module.exports = function(app, passport){
 	  var title = req.params.id
 	  var article = require('./article.api.js')
 	  article.view(res, title)
+	});
+
+	app.get('/facebook', passport.authenticate('facebook',{scope:'email, user_about_me, user_birthday, user_location, manage_pages, user_groups, publish_actions'}));
+
+	app.get('/fb', passport.authenticate('facebook', { successRedirect: '/checkAuth', failureRedirect: '/#/app/login' }));
+
+	// route to test on angualr side is authenticatred in node
+	app.get('/loggedin', ensureAuth, function(req, res) {
+	  res.send(req.isAuthenticated() ? req.user : '0');
+	});
+
+	app.get('/checkAuth', function(req, res){	
+	  res.redirect('/#/app/add')
+	});	
+
+	// route to log out
+	app.post('/logout', function(req, res){
+	  req.logOut();
+	  res.send(200);
 	});
 
 	app.get('/rest/profile', ensureAuth, function(req, response){
