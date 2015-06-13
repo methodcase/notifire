@@ -6,7 +6,7 @@ module.exports = function(app, passport){
 	// faceboook credentials
 	var conf = {
 		'client_id' : '131613223561516',
-		'redirect_uri' : 'http://127.0.0.1:3100/fb',
+		'redirect_uri' : 'http://localhost:3100/fb/',
 		'client_secret' : 'b6f1dc0f079c5b085396ee10ff6eb322',
 		'atoken': '',
 		'scope':'email, user_about_me, user_birthday, user_location, manage_pages, user_groups'
@@ -72,6 +72,28 @@ module.exports = function(app, passport){
 		var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
 		myRootRef.push(post);
 		res.redirect('http://localhost:3100/#/home');
+
+	  	var wallPost = {
+	  	  message: "Fire Notice at "+ post.location +Math.random().toString(36).substr(2, 5)
+	  	};
+	  	graph.get("/oauth/access_token?client_id=131613223561516&client_secret=b6f1dc0f079c5b085396ee10ff6eb322&grant_type=client_credentials", function(err, res){
+	  		console.log(res)
+			// graph.setAccessToken(res.access_token)			
+			// graph.get("/131613223561516",  function(err, res) {
+			// 	console.log(res)	  		
+			// });
+
+		  	graph.post("/804124363028186/feed?access_token="+res.access_token, wallPost,  function(err, res) {
+		  		console.log(res)
+		  		response.redirect('http://localhost:3100/#/home');	  
+		  	}); 
+
+			// graph.get("/me/accounts",  function(err, ress) {
+			// 	console.log("next")
+			// 	console.log(ress.data)
+			// });	
+	  	})
+	  	
 	});
 	
 	app.get("/rest/view/article/:id", function(req, res){
@@ -79,4 +101,31 @@ module.exports = function(app, passport){
 	  var article = require('./article.api.js')
 	  article.view(res, title)
 	});
+
+	app.get('/facebook', passport.authenticate('facebook',{scope:'email, user_about_me, user_birthday, user_location, manage_pages, user_groups, publish_actions'}));
+
+	app.get('/fb', passport.authenticate('facebook', { successRedirect: '/checkAuth', failureRedirect: '/#/app/login' }));
+
+	// route to test on angualr side is authenticatred in node
+	app.get('/loggedin', ensureAuth, function(req, res) {
+	  res.send(req.isAuthenticated() ? req.user : '0');
+	});
+
+	app.get('/checkAuth', function(req, res){	
+	  res.redirect('/#/app/add')
+	});	
+
+	// route to log out
+	app.post('/logout', function(req, res){
+	  req.logOut();
+	  res.send(200);
+	});
+
+	app.get('/rest/profile', ensureAuth, function(req, response){
+	  var data = "";
+	  graph
+	    .get("/me", function(err, res) {
+	      response.send(res)
+	  });
+	});	
 };
