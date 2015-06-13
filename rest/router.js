@@ -5,9 +5,9 @@ module.exports = function(app, passport){
 
 	// faceboook credentials
 	var conf = {
-		'client_id' : '131613223561516',
+		'client_id' : 'CLIENT_ID',
 		'redirect_uri' : 'http://localhost:3100/fb/',
-		'client_secret' : 'b6f1dc0f079c5b085396ee10ff6eb322',
+		'client_secret' : 'SECRET_KEY',
 		'atoken': '',
 		'scope':'email, user_about_me, user_birthday, user_location, manage_pages, user_groups'
 	}
@@ -75,7 +75,7 @@ module.exports = function(app, passport){
 	  	var wallPost = {
 	  	  message: "Fire Notice at "+ post.location
 	  	};
-	  	graph.get("/oauth/access_token?client_id=131613223561516&client_secret=b6f1dc0f079c5b085396ee10ff6eb322&grant_type=client_credentials", function(err, res){
+	  	graph.get("/oauth/access_token?client_id=CLIENT_ID&client_secret=SECRET_KEY&grant_type=client_credentials", function(err, res){
 	  		console.log(res)
 			// graph.setAccessToken(res.access_token)			
 			// graph.get("/131613223561516",  function(err, res) {
