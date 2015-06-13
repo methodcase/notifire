@@ -96,7 +96,7 @@ angular.module('myApp', ['ui.router','app.controllers','app.service'])
       .state('app.comment', {
         url: "/comment/:id",
         views: {
-            "head": {templateUrl: "www/templates/header.html", controller: "HomeCtrl"},
+            // "head": {templateUrl: "www/templates/header.html", controller: "HomeCtrl"},
             "body": {templateUrl: "www/templates/comment.html", controller: 'CommentCtrl'}
         }
       })

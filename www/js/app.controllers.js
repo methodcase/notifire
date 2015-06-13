@@ -99,11 +99,17 @@ angular.module('app.controllers',['ngMap'])
 	$http.get('/rest/view/article/'+$scope.uni).
 	  success(function(data, status, headers, config) {
 	  	$scope.article = data;
+      $scope.alertID = $scope.uni;
+      console.info('alertID:',$scope.alertID);
 	  	setLocation(data);
       loadComment($scope.uni);
 	  }).
 	  error(function(data, status, headers, config) {
 	  });	
+
+    $scope.popup = function() {
+      window.open('http://localhost:3100/#/app/comment/' + $scope.uni,"mywindow","menubar=1,resizable=1,width=450,height=450");
+    }
 
     function loadComment(id) {
       console.info('loadComment');
@@ -169,9 +175,9 @@ angular.module('app.controllers',['ngMap'])
 		  
 })
 
-.controller('CommentCtrl', function($scope, $http, $routeParams){
-id = $routeParams.id;
-console.info(id);
+.controller('CommentCtrl', function($scope, $http, $stateParams){
+  $scope.alertID= $stateParams.id;
+  console.log($scope.alertID);
 })
 
 .directive('mapa', function(){	
