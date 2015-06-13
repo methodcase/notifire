@@ -108,7 +108,7 @@ angular.module('app.controllers',['ngMap'])
 	  });	
 
     $scope.popup = function() {
-      window.open('http://localhost:3100/#/app/comment/' + $scope.uni,"mywindow","menubar=1,resizable=1,width=450,height=450");
+      window.open('/#/app/comment/' + $scope.uni,"mywindow","menubar=1,resizable=1,width=500,height=450");
     }
 
     function loadComment(id) {
