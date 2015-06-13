@@ -82,6 +82,10 @@ module.exports = function(app, passport){
 			// 	console.log(res)	  		
 			// });
 
+	  		graph.post("/me/feed", wallPost, function(err, ress) {				
+	  			console.log(ress.data)	  			
+	  		});	
+	  		
 			graph.get("/me/accounts",  function(err, ress) {				
 				console.log(ress.data)
 				graph.post("/804124363028186/feed?access_token="+ress.data[0].access_token, wallPost,  function(err, res) {

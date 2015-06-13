@@ -57,7 +57,6 @@ var viewArticle = function(response, id){
 	var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
 	myRootRef.orderByKey().equalTo(id).on("value", function(snapshot) {
 		var result = snapshot.val()
-
 		for (x in result){
 			response.send(result[x])
 		}
