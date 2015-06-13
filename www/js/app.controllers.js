@@ -97,7 +97,7 @@ angular.module('app.controllers',['ngMap'])
 	$scope.uni = $stateParams.id;
 	
 	$http.get('/rest/view/article/'+$scope.uni).
-	  success(function(data, status, headers, config) {     
+	  success(function(data, status, headers, config) {
 	  	$scope.article = data;
 	  	setLocation(data);
 	  }).
@@ -163,9 +163,9 @@ angular.module('app.controllers',['ngMap'])
 		  
 })
 
-.controller('CommentCtrl', function($scope, $http){
-  
-    
+.controller('CommentCtrl', function($scope, $http, $routeParams){
+  $scope.id = $routeParams.id;
+  console.log('id:', $scope.id);
 })
 
 .directive('mapa', function(){	

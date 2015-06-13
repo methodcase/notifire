@@ -9,6 +9,8 @@
     <div class="row">
     	<div class="col-sm-10">
     		<div id="map-canvas" style="width:940px"></div>
+            <h2>Description</h2>
+            <p>{{article.description}}</p>
     	</div>
     </div>
 
@@ -26,6 +28,12 @@
             
         </div>
     </div>
+
+            <h3>Comment</h3>
+            <div ng-include src="'www/templates/comment.html'" id="comment"></div>
+        </div>
+    </div>
+
 
   </div> <!-- /container -->
  </section>
