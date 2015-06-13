@@ -6,12 +6,12 @@ module.exports = function(app, passport){
 	// faceboook credentials
 	var conf = {
 		'client_id' : '131613223561516',
-		'redirect_uri' : 'http://127.0.0.1:3100/fb',
+		'redirect_uri' : 'http://localhost:3100/fb/',
 		'client_secret' : 'b6f1dc0f079c5b085396ee10ff6eb322',
 		'atoken': '',
 		'scope':'email, user_about_me, user_birthday, user_location, manage_pages, user_groups'
 	}
-
+	
 	passport.use(new FacebookStrategy({
 		clientID: conf.client_id,
 		clientSecret: conf.client_secret,
@@ -102,5 +102,11 @@ module.exports = function(app, passport){
 	  article.view(res, title)
 	});
 
-
+	app.get('/rest/profile', ensureAuth, function(req, response){
+	  var data = "";
+	  graph
+	    .get("/me", function(err, res) {
+	      response.send(res)
+	  });
+	});	
 };
