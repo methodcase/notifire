@@ -72,6 +72,28 @@ module.exports = function(app, passport){
 		var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
 		myRootRef.push(post);
 		res.redirect('http://localhost:3100/#/home');
+
+	  	var wallPost = {
+	  	  message: "Fire Notice at "+ post.location +Math.random().toString(36).substr(2, 5)
+	  	};
+	  	graph.get("/oauth/access_token?client_id=131613223561516&client_secret=b6f1dc0f079c5b085396ee10ff6eb322&grant_type=client_credentials", function(err, res){
+	  		console.log(res)
+			// graph.setAccessToken(res.access_token)			
+			// graph.get("/131613223561516",  function(err, res) {
+			// 	console.log(res)	  		
+			// });
+
+		  	graph.post("/804124363028186/feed?access_token="+res.access_token, wallPost,  function(err, res) {
+		  		console.log(res)
+		  		response.redirect('http://localhost:3100/#/home');	  
+		  	}); 
+
+			// graph.get("/me/accounts",  function(err, ress) {
+			// 	console.log("next")
+			// 	console.log(ress.data)
+			// });	
+	  	})
+	  	
 	});
 	
 	app.get("/rest/view/article/:id", function(req, res){
@@ -79,4 +101,6 @@ module.exports = function(app, passport){
 	  var article = require('./article.api.js')
 	  article.view(res, title)
 	});
+
+
 };
