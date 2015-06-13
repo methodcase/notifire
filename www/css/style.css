@@ -133,7 +133,7 @@ body{
 
 #map-canvas { width: 840px; height: 300px; }
 .controls {
-  margin-top: 16px;
+  /*margin-top: 16px;*/
   border: 1px solid transparent;
   border-radius: 2px 0 0 2px;
   box-sizing: border-box;
@@ -167,4 +167,11 @@ body{
 #twitter-widget-0 {
  float: none;
  width: 100% !important; 
+}
+
+.profile-pic {
+    border:1px solid #;
+-webkit-border-radius: 40px;
+-moz-border-radius: 40px;
+border-radius: 40px;  
 }

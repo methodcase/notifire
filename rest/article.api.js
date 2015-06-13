@@ -27,7 +27,7 @@ var getArticle = function(response){
 	
 	var Firebase = require('firebase');
 	var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
-
+	
 	var list = [];
 	var displayChatMessage = function(message){		
 		console.log(message.length)
