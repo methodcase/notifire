@@ -30,7 +30,6 @@ var getArticle = function(response){
 
 	var list = [];
 	var displayChatMessage = function(message){		
-		console.log(message.length)
 		for (x in message){				
 			list.push({'location':message[x].location,'id':x})
 		}

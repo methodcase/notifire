@@ -128,4 +128,9 @@ module.exports = function(app, passport){
 	      response.send(res)
 	  });
 	});	
+
+
+	app.get("/comment", function(req, res){
+		res.render('comment.html');
+	});	
 };

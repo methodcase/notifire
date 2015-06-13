@@ -100,9 +100,15 @@ angular.module('app.controllers',['ngMap'])
 	  success(function(data, status, headers, config) {
 	  	$scope.article = data;
 	  	setLocation(data);
+      loadComment($scope.uni);
 	  }).
 	  error(function(data, status, headers, config) {
 	  });	
+
+    function loadComment(id) {
+      console.info('loadComment');
+      $( "#comment" ).load('www/templates/comment.html');
+    }
 
     function setLocation(details) {
       console.info(details);
@@ -164,8 +170,8 @@ angular.module('app.controllers',['ngMap'])
 })
 
 .controller('CommentCtrl', function($scope, $http, $routeParams){
-  $scope.id = $routeParams.id;
-  console.log('id:', $scope.id);
+id = $routeParams.id;
+console.info(id);
 })
 
 .directive('mapa', function(){	
