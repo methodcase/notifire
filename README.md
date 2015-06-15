@@ -13,7 +13,7 @@ or maybe there a fire near you and you want to broadcast for others to know
 
 so, what if the next time we hear a fire truck siren
 
-we have the NOTIFIRE
+WE . GET . NOTIFIRE
 
 ## To install
     1. npm install
