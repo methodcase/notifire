@@ -11,6 +11,8 @@ we go to facebook, ask around, maybe make some calls.
 
 or maybe there a fire near you and you want to broadcast for others to know
 
+would it be amazing if we get notified when there's a fire incident happening?
+
 so, what if the next time we hear a fire truck siren
 
 WE . GET . NOTIFIRE
